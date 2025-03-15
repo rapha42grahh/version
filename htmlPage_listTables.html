@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page HTML avec Listes et Tableaux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul, ol {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .section {
+            margin-top: 50px;
+            padding-top: 50px;
+        }
+        #btn-retour {
+            display: none; /* Caché au chargement */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        #btn-retour:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenue sur la page HTML de Raphaël</h1>
+    <p>Ceci est un exemple de page HTML avec des listes et un tableau.</p>
+    <a href="#listes-tableaux" class="btn">Voir les listes et tableaux</a>
+
+    <div class="section" id="listes-tableaux">
+        <h2>Exemple de Listes et Tableaux</h2>
+
+        <h3>Liste non ordonnée</h3>
+        <ul>
+            <li>Pomme</li>
+            <li>Banane</li>
+            <li>Orange</li>
+        </ul>
+
+        <h3>Liste ordonnée</h3>
+        <ol>
+            <li>Préparer les ingrédients</li>
+            <li>Mélanger</li>
+            <li>Cuire au four</li>
+        </ol>
+
+        <h3>Tableau des étudiants</h3>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>Ville</th>
+            </tr>
+            <tr>
+                <td>Jean</td>
+                <td>25</td>
+                <td>Paris</td>
+            </tr>
+            <tr>
+                <td>Marie</td>
+                <td>30</td>
+                <td>Lyon</td>
+            </tr>
+            <tr>
+                <td>Paul</td>
+                <td>28</td>
+                <td>Marseille</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Bouton Retour à l'accueil -->
+    <a href="#" id="btn-retour">↑ Retour à l'accueil</a>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            var btnRetour = document.getElementById("btn-retour");
+            var section = document.getElementById("listes-tableaux");
+            var sectionPosition = section.offsetTop;
+
+            if (window.scrollY >= sectionPosition - 50) {
+                btnRetour.style.display = "block"; // Afficher le bouton quand on descend
+            } else {
+                btnRetour.style.display = "none"; // Cacher le bouton quand on est en haut
+            }
+        });
+    </script>
+
+</body>
+</html>
